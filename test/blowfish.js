@@ -1,18 +1,11 @@
 
 
-
-
-test ("expand_key", function () {
-    equal (Blowfish.expand_key(
-                "hello",
-                Blowfish.default_key()).S[1023],
-           4221063286);
-});
-
 (function () {
     var variable_key,
         plaintext_l, plaintext_r,
         ciphertext_l, ciphertext_r;
+
+    module("single words, variable key");
 
     /* key bytes for variable key tests */
     variable_key = [
@@ -102,7 +95,7 @@ test ("expand_key", function () {
 
 
 
-    test ("encryption, single words, variable key", function () {
+    test ("encryption", function () {
         var i;
         for (i=0; i<variable_key.length; i++) {
             deepEqual(
@@ -114,7 +107,7 @@ test ("expand_key", function () {
         }
     });
 
-    test ("decryption, single words, variable key", function () {
+    test ("decryption", function () {
         var i;
         for (i=0; i<variable_key.length; i++) {
             deepEqual(
@@ -129,11 +122,11 @@ test ("expand_key", function () {
 
 
 (function () {
-
     var set_key,
         plaintext_l, plaintext_r,
         ciphertext_l, ciphertext_r;
 
+    module("constant input, variable_length_key");
 
     /* key bytes for set key tests */
     set_key = new Uint8Array([
@@ -182,7 +175,7 @@ test ("expand_key", function () {
 
 
 
-    test ("encryption, constant input, variable length key", function () {
+    test ("encryption", function () {
         var i;
         for (i=0; i<set_key.length; i++) {
             deepEqual(
@@ -194,7 +187,7 @@ test ("expand_key", function () {
         }
     });
 
-    test ("decryption, constant input, variable length key", function () {
+    test ("decryption", function () {
         var i;
         for (i=0; i<set_key.length; i++) {
             deepEqual(
