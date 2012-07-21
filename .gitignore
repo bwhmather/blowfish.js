@@ -1,24 +1,12 @@
-.*
-!.gitignore
+# junk os files
+.DS_Store
+__MAC_OSX/
+thumbs.db
+desktop.ini
+
+# editor swap files
+~*
 *~
-*.un~
-__MACOSX
-Thumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-*.7z
-*.jar
-*.rar
-*.zip
-*.gz
-*.bzip
-*.xz
-*.lzma
-*.iso
-*.tar
-*.dmg
-*.xpi
-*.gem
-*.egg
-*.deb
-*.rpm
+.*.sw[op]
+
+
